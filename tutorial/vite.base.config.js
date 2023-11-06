@@ -3,10 +3,13 @@ import { defineConfig } from 'vite'
 const path = require('path')
 // import { ViteAliases } from 'vite-aliases'
 import MyViteAlias from './plugins/ViteAliases.js'
+import { viteMockServe } from 'vite-plugin-mock'
+
 export default defineConfig({
   plugins: [
     // ViteAliases(),
     MyViteAlias(),
+    viteMockServe(),
   ],
   resolve: {
     alias: {

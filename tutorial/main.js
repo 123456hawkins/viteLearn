@@ -10,3 +10,13 @@ import { name, age } from './src/assets/json/index.json' //不用全部导入可
 import './src/assets/svgloader.js'
 // console.log(count)
 console.log(name, age)
+
+fetch('/api/users', {
+  method: 'post',
+})
+  .then((data) => {
+    console.log('data', data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })

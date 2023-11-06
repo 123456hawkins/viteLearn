@@ -5,7 +5,8 @@
 // import './conponentB.js'
 // import './index.module.less'
 // import './variables.css'
-import './src/assets/imageLoader.js'
+// import './src/assets/imageLoader.js'
 import { name, age } from '@assets/json/index.json' //不用全部导入可以方便treeShaking
+import './src/assets/svgloader.js'
 // console.log(count)
 console.log(name, age)

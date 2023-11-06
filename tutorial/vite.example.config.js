@@ -1,5 +1,13 @@
 import { defineConfig } from 'vite'
+const postcssPresetEnv = require('postcss-preset-env')
+const path = require('path')
 export default defineConfig({
+  resolve: {
+    alias: {//配置全局路径
+      '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+    },
+  },
   optimizeDeps: {
     // 当遇到lodash-es时不做依赖预构建
     exclude: ['lodash-es'], //将指定数组中的依赖排除预购建
@@ -32,6 +40,13 @@ export default defineConfig({
       },
       sass: {},
     },
-    devSourcemap: true,//开启文件索引
+    devSourcemap: true,
+    postcss: {
+      plugins: [
+        postcssPresetEnv({
+          importFrom: path.resolve(__dirname, './variables.css'), //让postcss知道一些全局变量它需要记下来
+        }),
+      ],
+    },
   },
 })

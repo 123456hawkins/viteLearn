@@ -1,0 +1,7 @@
+// 配置一些ts检查手段和检查规则
+{
+  "compilerOptions": {
+    "skipLibCheck": false,//是否检查node_modules错误
+    "module": "ESNext"//默认把语法编译为esnext
+  }
+}

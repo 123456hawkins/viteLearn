@@ -4,12 +4,29 @@ const path = require('path')
 // import { ViteAliases } from 'vite-aliases'
 import MyViteAlias from './plugins/ViteAliases.js'
 import { viteMockServe } from 'vite-plugin-mock'
-
+import { createHtmlPlugin } from 'vite-plugin-html'
 export default defineConfig({
   plugins: [
     // ViteAliases(),
     MyViteAlias(),
     viteMockServe(),
+    createHtmlPlugin({
+      inject: {
+        data: {
+          title: '首页123',
+          injectScript: `<script src="./inject.js"></script>`,
+        },
+        tags: [
+          {
+            injectTo: 'body-prepend',
+            tag: 'div',
+            attrs: {
+              id: 'tag',
+            },
+          },
+        ],
+      },
+    }),
   ],
   resolve: {
     alias: {

@@ -20,5 +20,18 @@ export default defineConfig({
         return `${name}-${Math.random().toString().substr(3, 8)}`
       },
     },
+    preprocessorOptions: {
+      // 配置命令去看less官网
+      //key+config key代表预处理器名
+      less: {
+        math: 'always', //永远计算less中的表达式
+        globalVars: {
+          //这样设置就代替了在less设置全局变量
+          mainColor: 'red',
+        },
+      },
+      sass: {},
+    },
+    devSourcemap: true,
   },
 })

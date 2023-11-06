@@ -1,4 +1,6 @@
 import { defineConfig } from 'vite'
+const postcssPresetEnv = require('postcss-preset-env')
+const path = require('path')
 export default defineConfig({
   optimizeDeps: {
     // 当遇到lodash-es时不做依赖预构建
@@ -33,5 +35,12 @@ export default defineConfig({
       sass: {},
     },
     devSourcemap: true,
+    postcss: {
+      plugins: [
+        postcssPresetEnv({
+          importFrom: path.resolve(__dirname, './variables.css'), //让postcss知道一些全局变量它需要记下来
+        }),
+      ],
+    },
   },
 })

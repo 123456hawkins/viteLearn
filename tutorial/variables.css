@@ -1,0 +1,4 @@
+/* 使用一些未来的css特性不需要less和scss编译 */
+:root{
+  --color1:blue;
+}

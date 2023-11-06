@@ -3,7 +3,8 @@ const postcssPresetEnv = require('postcss-preset-env')
 const path = require('path')
 export default defineConfig({
   resolve: {
-    alias: {//配置全局路径
+    alias: {
+      //配置全局路径
       '@': path.resolve(__dirname, './src'),
       '@assets': path.resolve(__dirname, './src/assets'),
     },
@@ -48,5 +49,16 @@ export default defineConfig({
         }),
       ],
     },
+  },
+  build: {
+    rollupOptions: {
+      //rollup的一些构建策略
+      output: {
+        assetFileNames: 'hawkins_[hash].[name].[ext]', //hash代表将文件名和文件内容就进行组合计算
+      },
+    },
+    assetsInlineLimit: 4096000, //图片小于4kb，就转换为base64
+    outDir: 'testDist', //打包目录
+    assetsDir: 'static', //静态资源目录
   },
 })

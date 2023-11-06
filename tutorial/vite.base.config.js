@@ -2,6 +2,12 @@ import { defineConfig } from 'vite'
 const postcssPresetEnv = require('postcss-preset-env')
 const path = require('path')
 export default defineConfig({
+  resolve: {
+    alias: {//配置全局路径
+      '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+    },
+  },
   optimizeDeps: {
     // 当遇到lodash-es时不做依赖预构建
     exclude: ['lodash-es'], //将指定数组中的依赖排除预购建

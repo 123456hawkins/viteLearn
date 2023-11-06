@@ -60,5 +60,6 @@ export default defineConfig({
     assetsInlineLimit: 4096000, //图片小于4kb，就转换为base64
     outDir: 'testDist', //打包目录
     assetsDir: 'static', //静态资源目录
+    emptyOutDir: true, //清除构建目录
   },
 })

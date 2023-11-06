@@ -1,7 +1,13 @@
 import { defineConfig } from 'vite'
-const postcssPresetEnv = require('postcss-preset-env')
+// const postcssPresetEnv = require('postcss-preset-env')
 const path = require('path')
+// import { ViteAliases } from 'vite-aliases'
+import MyViteAlias from './plugins/ViteAliases.js'
 export default defineConfig({
+  plugins: [
+    // ViteAliases(),
+    MyViteAlias(),
+  ],
   resolve: {
     alias: {
       //配置全局路径
@@ -42,13 +48,13 @@ export default defineConfig({
       sass: {},
     },
     devSourcemap: true,
-    postcss: {
-      plugins: [
-        postcssPresetEnv({
-          importFrom: path.resolve(__dirname, './variables.css'), //让postcss知道一些全局变量它需要记下来
-        }),
-      ],
-    },
+    // postcss: {
+    //   plugins: [
+    //     postcssPresetEnv({
+    //       importFrom: path.resolve(__dirname, './variables.css'), //让postcss知道一些全局变量它需要记下来
+    //     }),
+    //   ],
+    // },
   },
   build: {
     rollupOptions: {
@@ -60,5 +66,6 @@ export default defineConfig({
     assetsInlineLimit: 4096000, //图片小于4kb，就转换为base64
     outDir: 'testDist', //打包目录
     assetsDir: 'static', //静态资源目录
+    emptyOutDir: true, //清除构建目录
   },
 })

@@ -25,7 +25,7 @@ export default defineConfig(({ command, mode }) => {
   console.log('mode', mode)
   // process.cwd返回当前node进程的工作目录
   const env = loadEnv(mode, process.cwd(), '') //第三个参数是.env名,一般是.env
-  console.log('env///', env)
+  // console.log('env///', env)
   // console.log(command)
   return envResolver[command]()
 })

@@ -5,11 +5,13 @@ const path = require('path')
 import MyViteAlias from './plugins/ViteAliases.js'
 import { viteMockServe } from 'vite-plugin-mock'
 import { createHtmlPlugin } from 'vite-plugin-html'
+import viteCompression from 'vite-plugin-compression'
 export default defineConfig({
   plugins: [
     // ViteAliases(),
     MyViteAlias(),
     viteMockServe(),
+    viteCompression(),
     createHtmlPlugin({
       inject: {
         data: {

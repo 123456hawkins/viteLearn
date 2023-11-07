@@ -2,6 +2,9 @@
 {
   "compilerOptions": {
     "skipLibCheck": false,//是否检查node_modules错误
-    "module": "ESNext"//默认把语法编译为esnext
+    "module": "ESNext",//默认把语法编译为esnext
+    "moduleResolution": "Node",//配置导包方式为node方式
+    "lib": ["ES2017","DOM"],
+    "allowSyntheticDefaultImports": true
   }
 }

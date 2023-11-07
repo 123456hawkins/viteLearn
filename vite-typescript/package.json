@@ -6,16 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
-    "build":"tsc --noEmit && vite build"
+    "build": "tsc --noEmit && vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.21",
     "typescript": "^5.2.2",
     "vite": "^4.5.0"
   },
   "devDependencies": {
+    "@types/eslint": "^8.44.7",
+    "@types/lodash": "^4.14.200",
+    "@types/node": "^20.8.10",
+    "@types/stylelint": "^14.0.0",
     "vite-plugin-checker": "^0.6.2"
   }
 }

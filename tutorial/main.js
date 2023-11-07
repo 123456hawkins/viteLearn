@@ -8,6 +8,9 @@
 // import './src/assets/imageLoader.js'
 import { name, age } from './src/assets/json/index.json' //不用全部导入可以方便treeShaking
 import './src/assets/svgloader.js'
+import('./src/assets/imageLoader').then((data) => {
+  console.log(data)
+})
 // console.log(count)
 console.log(name, age)
 
